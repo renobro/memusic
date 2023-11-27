@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> songs</title>
+     <style>
+
+       body {
+            margin: 10;
+            padding: 10;
+
+        }
+
+       /* Song Detail Page Styling */
+.song-detail-container {
+    background-color: #fff; /* White background */
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card-header {
+    background-color: #f9c640; /* Shiny header background color */
+    color: #fff;
+    font-size: 1.5rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+.card-title {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #f9c640; /* Shiny button color */
+    border-color: #f9c640;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e6b037;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="song-detail-container">
+        <div class="card">
+            <div class="card-header">
+                Explore,Download
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ song.title }}</h5>
+                          <audio controls>
+                    <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="mt-3"><a href="{{ song.audio_file.url }}" download class="btn btn-primary">Download Song</a></p>
+            </div>
+                    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+                        {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+</html>

@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Songs</title>
+     <style>
+
+body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+                color: white;
+    }
+
+    .card {
+            box-shadow: 0 16px 48px #E3E7EB;
+             text-align: center;
+
+
+
+    }
+
+
+        h1 {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: green;
+
+    </style>
+
+</head>
+<body>
+         <div class="song-list-container">
+
+
+                <div class="col-lg-4 col-md-6 mb-4">
+<div class="card mb-4">
+                <div class="card-body">
+
+        <h1 class="text-center my-4">Explore Our Songs</h1>
+        <div class="row">
+            {% for song in songs %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="{% url 'song:song_detail' song.id %}" class="card-link">
+                             <h5 class="card-title">{{ song.title }}</h5>
+                                                        <img src="{{ song.cover_image.url }}" class="card-img-top" alt="cover Image">
+
+
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+                        {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+</body>
+</html>

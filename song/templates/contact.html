@@ -1,0 +1,54 @@
+
+
+ <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+
+</style>
+
+<div class="container">
+  <p style="text-align: center; font-size: 30px; font-weight: bold; padding-top: 30px;">CONTACT US</p>
+            <div class="card-body">
+                <div class="col-lg-4 col-md-6 mb-4">
+
+  <form method="POST">
+      {% csrf_token %}
+            <div class="card-body">
+
+      <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name...">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">E-mail</label>
+        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your email address...">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Message</label>
+        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What's on your mind..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+                        {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+
+</div>
+
+
+
+

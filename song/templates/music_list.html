@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Blog</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d6efd;
+
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: green;
+        }
+
+        .container {
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome To Herosmusic</h2>
+        <p>Explore and enjoy the latest music releases.</p>
+        <a    href="{% url 'song:song_list' %}" class="btn btn-dark" >Browse Songs</a>
+
+
+
+    </div>
+                        {% block footer %} {% include 'footer.html' %} {% endblock footer %}
+
+</body>
+
+</html>

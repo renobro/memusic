@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artist List</title>
+     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("path_to_wizkids_image.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        a {
+            color: #f9c640;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Artist List</h1>
+    <ul>
+        {% for artist in artists %}
+            <li>{{ artist.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
